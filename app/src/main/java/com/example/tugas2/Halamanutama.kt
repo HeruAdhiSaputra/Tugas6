@@ -66,6 +66,11 @@ class Halamanutama : AppCompatActivity() {
             startActivity(Intent(AlarmClock.ACTION_SHOW_ALARMS))
         }
 
+        binding.textView5.setOnClickListener{
+            val intentHome = Intent(this,database::class.java)
+            startActivity(intentHome) }
+
+
 
 
 
