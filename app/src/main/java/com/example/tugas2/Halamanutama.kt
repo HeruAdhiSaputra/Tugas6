@@ -1,10 +1,15 @@
 package com.example.tugas2
 
 import android.content.Intent
+import android.media.RouteListingPreference.Item
 import android.net.Uri
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.provider.AlarmClock
 import android.provider.MediaStore
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,6 +30,7 @@ class Halamanutama : AppCompatActivity() {
 //        }
         binding = ActivityHalamanutamaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.idToolbar)
 
         binding.massage.setOnClickListener{
             val intent = Intent()
@@ -69,15 +75,31 @@ class Halamanutama : AppCompatActivity() {
         binding.textView5.setOnClickListener{
             val intentHome = Intent(this,database::class.java)
             startActivity(intentHome) }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_option, menu)
+        return true
 
 
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Logout -> {
+                startActivity(Intent(this,MainActivity::class.java))
+                return true
+            }
+            R.id.Register -> {
+                startActivity(Intent(this,Register2::class.java))
+                return true
+            }
+            R.id.Profil -> {
+                startActivity(Intent(this,Profil::class.java))
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
 
-
-
-
-
-
-
+        }
     }
 }
