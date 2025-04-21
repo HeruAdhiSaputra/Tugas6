@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentHome) }
 
             binding.textView3.setOnClickListener{
-                val intentHome = Intent(this,Register2::class.java)
+                val intentHome = Intent(this,Lupapassword::class.java)
                 startActivity(intentHome) }
 
         binding.textView4.setOnClickListener{
-            val intentHome = Intent(this,Lupapassword::class.java)
+            val intentHome = Intent(this,Register2::class.java)
             startActivity(intentHome) }
     }
 }
