@@ -97,6 +97,7 @@ class Halamanutama : AppCompatActivity() {
                 return true
             }
             R.id.Register -> {
+                auth.signOut()
                 startActivity(Intent(this,Register2::class.java))
                 return true
             }

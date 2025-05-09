@@ -32,7 +32,7 @@ class Register2 : AppCompatActivity() {
 
 
 
-        binding.kembali1.setOnClickListener{
+        binding.kembali.setOnClickListener{
             val intentHome = Intent(this,MainActivity::class.java)
             startActivity(intentHome) }
 

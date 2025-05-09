@@ -11,7 +11,7 @@
 
     <item
         android:id="@+id/Register"
-        android:title="Tambah Data"
+        android:title="Register"
         android:icon="@drawable/setting"
         app:showAsAction="never"/>
 
