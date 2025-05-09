@@ -16,8 +16,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tugas2.databinding.ActivityHalamanutamaBinding
 import com.example.tugas2.databinding.ActivityLupapasswordBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class Halamanutama : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityHalamanutamaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,8 @@ class Halamanutama : AppCompatActivity() {
         binding = ActivityHalamanutamaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.idToolbar)
+
+        auth = FirebaseAuth.getInstance()
 
         binding.massage.setOnClickListener{
             val intent = Intent()
@@ -87,6 +92,7 @@ class Halamanutama : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.Logout -> {
+                auth.signOut()
                 startActivity(Intent(this,MainActivity::class.java))
                 return true
             }
