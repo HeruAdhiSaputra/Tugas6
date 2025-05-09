@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <item
         android:id="@+id/Profil"
@@ -10,13 +11,14 @@
 
     <item
         android:id="@+id/Register"
-        android:title="Register"
+        android:title="Tambah Data"
         android:icon="@drawable/setting"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/Logout"
         android:title="Logout"
+        android:iconTint="#FFF"
         android:icon="@drawable/logout"
         app:showAsAction="always"/>
 

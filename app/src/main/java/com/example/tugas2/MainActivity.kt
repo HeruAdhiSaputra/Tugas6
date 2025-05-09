@@ -22,13 +22,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
 
-        binding.register.setOnClickListener{
+
+        binding.login.setOnClickListener{
             val email : String = binding.tvusername.text.toString().trim()
             val password : String = binding.tvpassword.text.toString().trim()
 
@@ -53,11 +49,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-            binding.textView3.setOnClickListener{
+        binding.remember.setOnClickListener{
                 val intentHome = Intent(this,Lupapassword::class.java)
                 startActivity(intentHome) }
 
-        binding.textView4.setOnClickListener{
+        binding.register.setOnClickListener{
             val intentHome = Intent(this,Register2::class.java)
             startActivity(intentHome) }
     }
